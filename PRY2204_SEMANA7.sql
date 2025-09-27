@@ -221,6 +221,7 @@ SELECT
 FROM COMPANIA
 ORDER BY renta_promedio DESC, nombre_empresa ASC;
 
+-- Informe 2
 SELECT 
     id_empresa AS "CODIGO",
     nombre_empresa AS "EMPRESA",
