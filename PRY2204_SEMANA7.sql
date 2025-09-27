@@ -35,7 +35,11 @@ CREATE TABLE COMPANIA (
     CONSTRAINT COMPANIA_PK PRIMARY KEY (id_empresa),
     CONSTRAINT COMPANIA_UN_NOMBRE UNIQUE (nombre_empresa),
     CONSTRAINT COMPANIA_FK_COMUNA FOREIGN KEY (cod_comuna, cod_region)
-        REFERENCES COMUNA (id_comuna, cod_region)
+        REFERENCES COMUNA (id_comuna, cod_region),
+    
+    -- Agrega un constraint adicional para asegurar que el pct sea entre 0 y 1
+    CONSTRAINT CK_PCT_VALIDO
+        CHECK (pct_aumento >= 0 AND pct_aumento <= 1)
 );
 
 CREATE TABLE ESTADO_CIVIL (
